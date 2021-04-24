@@ -10,7 +10,7 @@
     android:layout_width="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="405dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
@@ -20,6 +20,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="25dp"
             android:text="Nombre: "
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,6 +31,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginBottom="20dp"
             android:text="Cuerpo:"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -40,6 +42,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="50dp"
+            android:inputType="textMultiLine"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
