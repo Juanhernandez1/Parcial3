@@ -14,25 +14,25 @@ import java.util.List;
 import sv.edu.utec.parcial3.R;
 import sv.edu.utec.parcial3.model.Comment;
 
-public class AdaptadorComment extends RecyclerView.Adapter<AdaptadorComment.CommenViewHolder>  {
+public class AdaptorComment extends RecyclerView.Adapter<AdaptorComment.CommentViewHolder>  {
 
 
     List<Comment> CommentList;
 
 
-    public AdaptadorComment(List<Comment> Comment) {
+    public AdaptorComment(List<Comment> Comment) {
         this.CommentList = Comment;
     }
 
     @NonNull
     @Override
-    public AdaptadorComment.CommenViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdaptorComment.CommentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
-        return new AdaptadorComment.CommenViewHolder(view);
+        return new AdaptorComment.CommentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdaptadorComment.CommenViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdaptorComment.CommentViewHolder holder, int position) {
         holder.bindData(CommentList.get(position));
     }
 
@@ -41,12 +41,12 @@ public class AdaptadorComment extends RecyclerView.Adapter<AdaptadorComment.Comm
         return CommentList.size();
     }
 
-    public class CommenViewHolder extends RecyclerView.ViewHolder {
+    public class CommentViewHolder extends RecyclerView.ViewHolder {
 
         TextView nombre, cuerpo;
-        private CardView carditems;
 
-        public CommenViewHolder(@NonNull View itemView) {
+
+        public CommentViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre = itemView.findViewById(R.id.RespuestaName);
             cuerpo = itemView.findViewById(R.id.RespuestaBody);
@@ -59,10 +59,5 @@ public class AdaptadorComment extends RecyclerView.Adapter<AdaptadorComment.Comm
             cuerpo.setText(comment.getBody());
 
         }
-    }
-
-    public void setNewList(List<Comment> Comment) {
-        this.CommentList = Comment;
-        notifyDataSetChanged();
     }
 }
